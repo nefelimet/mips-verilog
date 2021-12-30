@@ -25,7 +25,7 @@ module alu(
     output [31:0] Out,
     output reg Zero
     );
-
+	
 	reg [31:0] alu_out;
 	assign Out = alu_out;
 	
@@ -34,10 +34,26 @@ module alu(
 		case(Op)
 		4'b0000:
 			assign alu_out = A + B;
-		default:
-			assign alu_out = A;
+		4'b0001:
+			assign alu_out = A - B;
+		4'b0010:
+			assign alu_out = A & B;
+		4'b0011:
+			assign alu_out = A | B;
+		4'b0100:
+			assign alu_out = ~A;
+		4'b1000:
+			assign alu_out = {A[31], A[31:1]};
+		4'b1010:
+			assign alu_out = {1'b0, A[31:1]};
+		4'b1001:
+			assign alu_out = {A[30:0], 1'b0};
+		4'b1100:
+			assign alu_out = {A[30:0], A[31]};
+		4'b1101:
+			assign alu_out = {A[0], A[31:1]};
 		endcase
 	end
-	
+
 
 endmodule
