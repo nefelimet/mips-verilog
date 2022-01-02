@@ -28,9 +28,9 @@ module alu(
 	
 	reg [31:0] alu_out;
 	assign Out = alu_out;
+	integer i;
 	
-	always@(*)
-	begin
+	always@(*) begin
 		case(Op)
 		4'b0000:
 			assign alu_out = A + B;
@@ -54,6 +54,33 @@ module alu(
 			assign alu_out = {A[0], A[31:1]};
 		endcase
 	end
-
+	
+	/*
+	for (genvar i = 0; i < 32; i=i+1) begin : setZero
+		assign Zero = Zero | alu_out[i];
+	end
+	assign Zero = ~Zero;
+	*/
+	
+	always@(alu_out) begin
+		if (alu_out == 0) begin
+			assign Zero = 1;
+		end
+		else begin
+			assign Zero = 0;
+		end
+	end
+	
+	
+	/*
+	always@(alu_out) begin
+		case(alu_out)
+			32'b00000000000000000000000000000000:
+				Zero <= 1;
+			default:
+				Zero <= 0;
+		endcase
+	end
+	*/
 
 endmodule
