@@ -33,25 +33,25 @@ module alu(
 	always@(*) begin
 		case(Op)
 		4'b0000:
-			assign alu_out = A + B;
+			alu_out = A + B;
 		4'b0001:
-			assign alu_out = A - B;
+			alu_out = A - B;
 		4'b0010:
-			assign alu_out = A & B;
+			alu_out = A & B;
 		4'b0011:
-			assign alu_out = A | B;
+			alu_out = A | B;
 		4'b0100:
-			assign alu_out = ~A;
+			alu_out = ~A;
 		4'b1000:
-			assign alu_out = {A[31], A[31:1]};
+			alu_out = {A[31], A[31:1]};
 		4'b1010:
-			assign alu_out = {1'b0, A[31:1]};
+			alu_out = {1'b0, A[31:1]};
 		4'b1001:
-			assign alu_out = {A[30:0], 1'b0};
+			alu_out = {A[30:0], 1'b0};
 		4'b1100:
-			assign alu_out = {A[30:0], A[31]};
+			alu_out = {A[30:0], A[31]};
 		4'b1101:
-			assign alu_out = {A[0], A[31:1]};
+			alu_out = {A[0], A[31:1]};
 		endcase
 	end
 	
@@ -64,10 +64,10 @@ module alu(
 	
 	always@(alu_out) begin
 		if (alu_out == 0) begin
-			assign Zero = 1;
+			Zero = 1;
 		end
 		else begin
-			assign Zero = 0;
+			Zero = 0;
 		end
 	end
 	
