@@ -6,7 +6,7 @@
 module AND_5_input(g,a,b,c,d,e);
   output g;
   input a,b,c,d,e;
-  and #(50) and1(f1,a,b,c,d),
+  and and1(f1,a,b,c,d),
             and2(g,f1,e);
 endmodule
 // fpga4student.com: FPGA projects, Verilog projects, VHDL projects 
@@ -15,11 +15,11 @@ endmodule
 module dec5to32(Out,Adr);
 input [4:0] Adr; // Adr=Address of register
 output [31:0] Out;
-not #(50) Inv4(Nota, Adr[4]);
-not #(50) Inv3(Notb, Adr[3]);
-not #(50) Inv2(Notc, Adr[2]);
-not #(50) Inv1(Notd, Adr[1]);
-not #(50) Inv0(Note, Adr[0]);
+not Inv4(Nota, Adr[4]);
+not Inv3(Notb, Adr[3]);
+not Inv2(Notc, Adr[2]);
+not Inv1(Notd, Adr[1]);
+not Inv0(Note, Adr[0]);
 
 AND_5_input a0(Out[0],  Nota,Notb,Notc,Notd,Note); // 00000
 AND_5_input a1(Out[1],  Nota,Notb,Notc,Notd,Adr[0]); // 00001
