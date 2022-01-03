@@ -25,9 +25,9 @@
 module register_tb;
 
 	// Inputs
-	reg CLK;
+	reg CLK = 0;
 	reg [31:0] Data;
-	reg WE;
+	reg WE = 1;
 
 	// Outputs
 	wire [31:0] Dout;
@@ -40,37 +40,19 @@ module register_tb;
 		.Dout(Dout)
 	);
 
+	always #1 CLK = !CLK;
+	
 	initial begin
-		CLK = 0;
-		Data = 0;
+	
+		#5;
+		Data = 4;
+		#5;
+		Data = 8;
+		#5;
 		WE = 0;
-		#25;
-		
-		CLK = ~CLK;
-		WE = 1;
-		Data = 32'b00000000000000000000000000000001;
-		#25;
-		
-		CLK = ~CLK;
-		WE = 0;
-		Data = 32'b00000000000000000000000000000001;
-		#25;
-		
-		CLK = ~CLK;
-		WE = 0;
-		Data = 32'b00000000000000000000000000000111;
-		#25;
-		
-		CLK = ~CLK;
-		WE = 1;
-		Data = 32'b00000000000000000000000000000111;
-		#25;
-		
-		CLK = ~CLK;
-		WE = 1;
-		Data = 32'b01000000110000000110000000000111;
-		#25;
-		
+		#5;
+		Data = 32;
+		#5;
 	end
 	
       
