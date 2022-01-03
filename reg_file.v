@@ -22,8 +22,8 @@ module reg_file(
     input [4:0] Ard1,
     input [4:0] Ard2,
     input [4:0] Awr,
-    output reg [31:0] Dout1,
-    output reg [31:0] Dout2,
+    output [31:0] Dout1,
+    output [31:0] Dout2,
     input [31:0] Din,
     input WrEn,
     input Clk
@@ -31,7 +31,7 @@ module reg_file(
 	 
 	 wire [31:0] W;
 	 wire [31:0] andWire;
-	 reg [31:0] Z [31:0];
+	 wire [31:0] Z [31:0];
 	 integer i;
 	 
 	 
