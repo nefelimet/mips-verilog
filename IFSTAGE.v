@@ -38,8 +38,8 @@ module IFSTAGE(
 	pc progcount (.Data(MUX_out), .Clk(Clk), .Reset(Reset), .LdEn(PC_LdEn), .Dout(PC_out));
 	
 	//Create adders
-	assign PC_next = PC_out + 32'b00000000000000000000000000000100;
-	assign PC_imm = PC_out + 32'b00000000000000000000000000000100 + PC_Immed << 2;
+	assign PC_next = PC_out + 4;
+	assign PC_imm = PC_out + 4 + PC_Immed << 2;
 	
 	//Create MUX
 	mux2to1 mux_pc (.D1(PC_next), .D2(PC_imm), .Sel(PC_sel), .Dout(MUX_out));
