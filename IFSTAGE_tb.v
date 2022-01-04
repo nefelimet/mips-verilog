@@ -53,8 +53,19 @@ module IFSTAGE_tb;
 		PC_LdEn = 1;
 		Reset = 0;
 		#5;
-		
+		//See a lot of instructions pass
 		#50;
+		
+		//Reset
+		Reset = 1;
+		#2;
+		Reset = 0;
+		#2;
+		
+		//Test branch instruction
+		PC_Immed = 8;
+		PC_sel = 1;
+		#10;
 		
 		
 
