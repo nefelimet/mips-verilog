@@ -44,7 +44,7 @@ module reg_file(
 		 end
 		 
 		 //Creation of 32 registers
-		 register r0 (.CLK(Clk), .Data(0), .WE(0), .Dout(Z[0]));
+		 register r0 (.CLK(Clk), .Data(0), .WE(1'b0), .Dout(Z[0]));
 		 register r1 (.CLK(Clk), .Data(Din), .WE(andWire[1]), .Dout(Z[1]));
 		 register r2 (.CLK(Clk), .Data(Din), .WE(andWire[2]), .Dout(Z[2]));
 		 register r3 (.CLK(Clk), .Data(Din), .WE(andWire[3]), .Dout(Z[3]));
