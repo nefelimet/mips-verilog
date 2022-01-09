@@ -51,6 +51,7 @@ module pc_tb;
 		LdEn = 0;
 		#5;
 		
+		#1;
 		LdEn = 1;
 		#10;
 		
