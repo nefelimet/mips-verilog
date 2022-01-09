@@ -80,6 +80,9 @@ module reg_file_tb;
 		WrEn = 1;
 		#5;
 		
+		Ard1 = 0;
+		#5;
+		
 	end
       
 endmodule
