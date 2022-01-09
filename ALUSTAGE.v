@@ -30,7 +30,7 @@ module ALUSTAGE(
 	 wire [31:0] ALU_in_B;
 	 
 	 //Create MUX
-	 mux32to1 mux_alu (.D1(RF_B), .D2(Immed), .Sel(ALU_Bin_sel), .Dout(ALU_in_B));
+	 mux2to1 mux_alu (.D1(RF_B), .D2(Immed), .Sel(ALU_Bin_sel), .Dout(ALU_in_B));
 	 
 	 //Create ALU
 	 alu alu_stage (.A(RF_A), .B(ALU_in_B), .Op(ALU_func), .Out(ALU_out), .Zero());
