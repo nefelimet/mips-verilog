@@ -47,16 +47,16 @@ module pc(
 	);
 	
 	initial begin
-		Dout <= 0;
+		Dout = 0;
 	end
 	
 	always@(posedge Clk) begin
 		if (LdEn) begin
-			Dout <= Data;
+			Dout = Data;
 		end
 		
 		if (Reset) begin
-			Dout <= 0;
+			Dout = 0;
 		end
 		
 	end
