@@ -31,15 +31,15 @@ module DECSTAGE(
     output reg [31:0] RF_B
     );
 
-	reg [4:0] instr1 = Instr[25:21];
-	reg [4:0] instr2 = Instr[15:11];
-	reg [4:0] instr3 = Instr[20:16];
-	reg [15:0] instr4 = Instr[15:0];
+	wire [4:0] instr1 = Instr[25:21];
+	wire [4:0] instr2 = Instr[15:11];
+	wire [4:0] instr3 = Instr[20:16];
+	wire [15:0] instr4 = Instr[15:0];
 	wire [4:0] read_reg2;
 	wire [4:0] write_data;
 	
 	//Create output Immed
-	//reg [31:0] temp = {16{instr4[15]}, instr4};
+	wire [31:0] temp = {0, instr4};
 	
 	//Create MUXs
 	mux2to1_5bit mux1 (.D1(instr2), .D2(instr3), .Sel(RF_B_sel), .Dout(read_reg2));
