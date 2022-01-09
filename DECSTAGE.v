@@ -26,9 +26,9 @@ module DECSTAGE(
     input RF_WrData_sel,
     input RF_B_sel,
     input Clk,
-    output reg [31:0] Immed,
-    output reg [31:0] RF_A,
-    output reg [31:0] RF_B
+    output [31:0] Immed,
+    output [31:0] RF_A,
+    output [31:0] RF_B
     );
 
 	wire [4:0] instr1 = Instr[25:21];
@@ -36,14 +36,15 @@ module DECSTAGE(
 	wire [4:0] instr3 = Instr[20:16];
 	wire [15:0] instr4 = Instr[15:0];
 	wire [4:0] read_reg2;
-	wire [4:0] write_data;
+	wire [31:0] write_data;
 	
 	//Create output Immed
-	wire [31:0] temp = {0, instr4};
+	wire [31:0] temp = {16'b0000000000000000, instr4};
+	assign Immed = temp;
 	
 	//Create MUXs
 	mux2to1_5bit mux1 (.D1(instr2), .D2(instr3), .Sel(RF_B_sel), .Dout(read_reg2));
-	mux2to1_5bit mux2 (.D1(ALU_out), .D2(MEM_out), .Sel(RF_WrData_sel), .Dout(write_data));
+	mux2to1 mux2 (.D1(ALU_out), .D2(MEM_out), .Sel(RF_WrData_sel), .Dout(write_data));
 	
 	//Create register file
 	reg_file RF (.Ard1(instr1), .Ard2(read_reg2), .Awr(instr3), .Dout1(RF_A), .Dout2(RF_B), .Din(write_data), .WrEn(RF_WrEn), .Clk(Clk));
