@@ -25,6 +25,8 @@ module register(
     output reg [31:0] Dout
     );
 
+	
+	
 	always@(posedge CLK) begin
 		if (WE) begin
 			Dout <= Data;
