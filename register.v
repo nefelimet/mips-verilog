@@ -25,7 +25,9 @@ module register(
     output reg [31:0] Dout
     );
 
-	
+	initial begin
+		Dout <= 0;
+	end
 	
 	always@(posedge CLK) begin
 		if (WE) begin
