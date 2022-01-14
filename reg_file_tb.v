@@ -51,7 +51,16 @@ module reg_file_tb;
 	always #1 Clk = !Clk;
 	
 	initial begin
-	
+		/*
+		WrEn = 1;
+		Awr = 0;
+		Din = 0;
+		#10;
+		
+		WrEn = 0;
+		Ard1 = 0;
+		#5;
+		*/
 		
 		WrEn = 0;
 		Ard1 = 10;
@@ -79,9 +88,15 @@ module reg_file_tb;
 		Awr = 10;
 		WrEn = 1;
 		#5;
-		
+		Ard2 = 10;
 		Ard1 = 0;
 		#5;
+		
+		Awr = 0;
+		#5;
+		Din = 9;
+		#5;
+		
 		
 	end
       
