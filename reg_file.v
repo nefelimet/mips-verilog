@@ -44,7 +44,7 @@ module reg_file(
 		 end
 		 
 		 //Creation of 32 registers
-		 register r0 (.CLK(Clk), .Data(0), .WE(1'b0), .Dout(Z[0]));
+		 register r0 (.CLK(Clk), .Data(Din), .WE(1'b0), .Dout(Z[0]));
 		 register r1 (.CLK(Clk), .Data(Din), .WE(andWire[1]), .Dout(Z[1]));
 		 register r2 (.CLK(Clk), .Data(Din), .WE(andWire[2]), .Dout(Z[2]));
 		 register r3 (.CLK(Clk), .Data(Din), .WE(andWire[3]), .Dout(Z[3]));
@@ -76,6 +76,7 @@ module reg_file(
 		 register r29 (.CLK(Clk), .Data(Din), .WE(andWire[29]), .Dout(Z[29]));
 		 register r30 (.CLK(Clk), .Data(Din), .WE(andWire[30]), .Dout(Z[30]));
 		 register r31 (.CLK(Clk), .Data(Din), .WE(andWire[31]), .Dout(Z[31]));
+		 
 		 
 		//Creation of two 32:1 multiplexers
 		mux32to1 mux1 (.D0(Z[0]), .D1(Z[1]), .D2(Z[2]), .D3(Z[3]), .D4(Z[4]), .D5(Z[5]), .D6(Z[6]), .D7(Z[7]), .D8(Z[8]), .D9(Z[9]), .D10(Z[10]), .D11(Z[11]), .D12(Z[12]), .D13(Z[13]), .D14(Z[14]), .D15(Z[15]), .D16(Z[16]), .D17(Z[17]), .D18(Z[18]), .D19(Z[19]), .D20(Z[20]), .D21(Z[21]), .D22(Z[22]), .D23(Z[23]), .D24(Z[24]), .D25(Z[25]), .D26(Z[26]), .D27(Z[27]), .D28(Z[28]), .D29(Z[29]), .D30(Z[30]), .D31(Z[31]), .Sel(Ard1), .Dout(Dout1));
