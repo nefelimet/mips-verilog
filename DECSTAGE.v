@@ -22,13 +22,16 @@ module DECSTAGE(
     input [31:0] Instr,
     input RF_WrEn,
     input [31:0] ALU_out,
-    input [31:0] MEM_out,
+	 input [31:0] MEM_out_or_lb,
     input RF_WrData_sel,
     input RF_B_sel,
     input Clk,
+	 input sb,
+	 input lb,
     output [31:0] Immed,
     output [31:0] RF_A,
-    output [31:0] RF_B
+	 output [31:0] RF_B_or_sb,
+	 output [31:0] lui_out
     );
 
 	wire [4:0] instr1 = Instr[25:21];
@@ -37,10 +40,17 @@ module DECSTAGE(
 	wire [15:0] instr4 = Instr[15:0];
 	wire [4:0] read_reg2;
 	wire [31:0] write_data;
+	wire [31:0] lb_out;
+	wire [31:0] sb_out;
+	wire [31:0] MEM_out;
+	wire [31:0] RF_B;
 	
 	//Create output Immed
 	wire [31:0] temp = {16'b0000000000000000, instr4};
 	assign Immed = temp;
+	
+	//Create lui unit
+	lui_unit lui (.immed(instr4), .lui_out(lui_out));
 	
 	//Create MUXs
 	mux2to1_5bit mux1 (.D1(instr2), .D2(instr3), .Sel(RF_B_sel), .Dout(read_reg2));
@@ -49,4 +59,11 @@ module DECSTAGE(
 	//Create register file
 	reg_file RF (.Ard1(instr1), .Ard2(read_reg2), .Awr(instr3), .Dout1(RF_A), .Dout2(RF_B), .Din(write_data), .WrEn(RF_WrEn), .Clk(Clk));
 
+	//Create get_byte units for lb and sb instructions
+	get_byte lb_byte (.Din(RF_B), .Dout(lb_out));
+	get_byte sb_byte (.Din(MEM_out), .Dout(sb_out));
+	
+	mux2to1 mux_lb (.D1(MEM_out), .D2(lb_out), .Sel(lb), .Dout(MEM_out_or_lb));
+	mux2to1 mux_sb (.D1(RF_B), .D2(sb_out), .Sel(sb), .Dout(RF_B_or_sb));
+	
 endmodule
