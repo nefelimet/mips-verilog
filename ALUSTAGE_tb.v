@@ -29,19 +29,25 @@ module ALUSTAGE_tb;
 	reg [31:0] RF_B;
 	reg [31:0] Immed;
 	reg ALU_Bin_sel;
+	reg [31:0] lui_out;
+	reg lui;
 	reg [3:0] ALU_func;
 
 	// Outputs
 	wire [31:0] ALU_out;
+	wire Zero;
 
 	// Instantiate the Unit Under Test (UUT)
 	ALUSTAGE uut (
 		.RF_A(RF_A), 
 		.RF_B(RF_B), 
 		.Immed(Immed), 
-		.ALU_Bin_sel(ALU_Bin_sel), 
+		.ALU_Bin_sel(ALU_Bin_sel),
+		.lui_out(lui_out),
+		.lui(lui),
 		.ALU_func(ALU_func), 
-		.ALU_out(ALU_out)
+		.ALU_out(ALU_out),
+		.Zero(Zero)
 	);
 
 	initial begin
@@ -51,6 +57,8 @@ module ALUSTAGE_tb;
 		RF_B = 32'b00000000000000000000000000000001;
 		Immed = 0;
 		ALU_Bin_sel = 0;
+		lui_out = 15;
+		lui = 0;
 		ALU_func = 4'b0000;
 		#10;
 		//$display("MUX result: %b", uut.ALU_in_B);
@@ -68,7 +76,13 @@ module ALUSTAGE_tb;
 		ALU_Bin_sel = 1;
 		Immed = 32'b00000000000000000000000000000101;
 		#10;
+		
+		//Out = A + lui
+		lui = 1;
+		RF_A = 0;
+		#10;
 
+	//Simulation time: 50ns
 	end
       
 endmodule
