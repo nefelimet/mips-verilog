@@ -44,14 +44,14 @@ module mux2to1_tb;
 		D1 = 0;
 		D2 = 1;
 		Sel = 0;
-		#50;
+		#5;
 		
 		D1 = 0;
 		D2 = 1;
 		Sel = 1;
-		#50;
+		#5;
 
-
+	//Simulation time: 10ns
 	end
       
 endmodule
