@@ -48,31 +48,36 @@ module MEMSTAGE_tb;
 		
 		//Write value '31' to addr 4
 		Mem_WrEn = 1;
-		ALU_MEM_Addr = 32'b00000000000000000000000000000100;
+		ALU_MEM_Addr = 4;
 		//addr = 0000000001
-		MEM_DataIn = 32'b00000000000000000000000000011111;
+		MEM_DataIn = 31;
 		#10;
 		
 		//Write value '16' to addr 1
 		Mem_WrEn = 1;
-		ALU_MEM_Addr = 32'b00000000000000000000000000000001;
+		ALU_MEM_Addr = 1;
 		//addr = 0000000000
-		MEM_DataIn = 32'b00000000000000000000000000010000;
+		MEM_DataIn = 16;
 		#10;
 		
 		//Read addr 4
 		Mem_WrEn = 0;
-		ALU_MEM_Addr = 32'b00000000000000000000000000000100;
+		ALU_MEM_Addr = 4;
 		//addr = 0000000001
 		#10;
 		
-		//Read addr
+		//Read addr 1
+		ALU_MEM_Addr = 1;
+		//addr = 0000000000
+		#10;
+		
+		//Read addr 4035 -> 1008
 		ALU_MEM_Addr = 32'b00000000000000000000111111000011;
 		//addr = 1111110000
 		#10;
 		
 		
-
+	//Simulation time: 50ns
 	end
       
 endmodule
