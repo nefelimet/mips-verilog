@@ -52,11 +52,12 @@ module IFSTAGE_tb;
 		PC_sel = 0;
 		PC_LdEn = 1;
 		Reset = 0;
+		
 		//See a lot of instructions pass
 		#50;
 		//$display("PCout: %b", uut.PC_out);
-		//Reset
 		
+		//Reset
 		Reset = 1;
 		//$display("PCout after reset=1 before #2: %b", uut.PC_out);
 		#2;
@@ -67,23 +68,14 @@ module IFSTAGE_tb;
 		//$display("PCout after reset=0: %b", uut.PC_out);
 		
 		//Test branch instruction
-		/*
-		PC_Immed = 2;
-		PC_sel = 1;
-		#6;
-		$display("PCout after PC_sel=1: %b", uut.PC_out);
-		
-		PC_sel = 0;
-		#10;
-		$display("PCout after PC_sel=0: %b", uut.PC_out);
-		*/
-		
 		PC_Immed = 15;
 		PC_sel = 1;
 		#2;
 		PC_sel = 0;
 		#10;
 
+	//Simulation time: 66ns
+	//Better test with Part 2 ROM data
 	end
       
 endmodule
