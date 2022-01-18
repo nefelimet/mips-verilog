@@ -53,6 +53,7 @@ module register_tb;
 		#5;
 		Data = 32;
 		#5;
+	//Simulation time: 25ns
 	end
 	
       
