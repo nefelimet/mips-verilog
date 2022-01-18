@@ -44,11 +44,20 @@ module ROM_tb;
 
 		addr = 0;
 		#5;
+		
+		addr = 1;
+		#5;
+		
 		addr = 17;
 		#5;
+		
+		addr = 31;
+		#5;
+		
 		addr = 831;
 		#5;
 		
+	//Simulation time: 25ns
 	end
       
 endmodule
