@@ -37,16 +37,16 @@ module dec5to32_tb;
 	);
 
 	initial begin
-		Adr = 5'b00000;
+		Adr = 0;
 		#5;
 		
-		Adr = 5'b00001;
+		Adr = 1;
 		#5;
 		
-		Adr = 5'b00010;
+		Adr = 2;
 		#5;
 		
-		Adr = 5'b00011;
+		Adr = 3;
 		#5;
 		
 		Adr = 4;
