@@ -136,30 +136,30 @@ module mux32to1_tb;
 		D31 = 31;
 		
 		Sel = 0;
-		#50;
+		#5;
 		
 		Sel = 1;
-		#50;
+		#5;
 		
 		Sel = 2;
-		#50;
+		#5;
 		
 		Sel = 3;
-		#50;
+		#5;
 		
 		Sel = 4;
-		#50;
+		#5;
 		
 		Sel = 5;
-		#50;
+		#5;
 		
 		Sel = 30;
-		#50;
+		#5;
 		
 		Sel = 31;
-		#50;
+		#5;
 		
-
+	//Simulation time: 40ns
 	end
       
 endmodule
