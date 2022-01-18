@@ -48,19 +48,9 @@ module reg_file_tb;
 		.Clk(Clk)
 	);
 
-	always #1 Clk = !Clk;
+	always #1 Clk = ~Clk;
 	
 	initial begin
-		/*
-		WrEn = 1;
-		Awr = 0;
-		Din = 0;
-		#10;
-		
-		WrEn = 0;
-		Ard1 = 0;
-		#5;
-		*/
 		
 		WrEn = 0;
 		Ard1 = 10;
@@ -97,7 +87,7 @@ module reg_file_tb;
 		Din = 9;
 		#5;
 		
-		
+	//Simulation time: 35ns
 	end
       
 endmodule
