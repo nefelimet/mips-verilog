@@ -32,11 +32,16 @@ module DECSTAGE_tb;
 	reg RF_WrData_sel;
 	reg RF_B_sel;
 	reg Clk = 0;
+	reg lb;
+	reg sb;
 
 	// Outputs
 	wire [31:0] Immed;
 	wire [31:0] RF_A;
 	wire [31:0] RF_B;
+	wire [31:0] lui_out;
+	wire [31:0] lb_out;
+	wire [31:0] sb_out;
 
 	// Instantiate the Unit Under Test (UUT)
 	DECSTAGE uut (
@@ -49,7 +54,8 @@ module DECSTAGE_tb;
 		.Clk(Clk), 
 		.Immed(Immed), 
 		.RF_A(RF_A), 
-		.RF_B(RF_B)
+		.RF_B(RF_B),
+		.lui_out(lui_out)
 	);
 	
 	always #1 Clk = ~Clk;
