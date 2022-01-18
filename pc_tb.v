@@ -68,7 +68,7 @@ module pc_tb;
 		LdEn = 1;
 		#5;
 		
-
+	//Simulation time: 36ns
 	end
       
 endmodule
