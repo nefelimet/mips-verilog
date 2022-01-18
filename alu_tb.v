@@ -103,6 +103,7 @@ module alu_tb;
 		Op = 4'b1101;
 		#5;
 		
+	//Simulation time: 50ns
 	end
       
 endmodule
