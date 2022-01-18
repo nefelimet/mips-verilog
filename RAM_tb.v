@@ -66,7 +66,12 @@ module RAM_tb;
 		//Read addr 3
 		addr = 10'b0000000011;
 		#10;
+		
+		//Read addr 1
+		addr = 10'b0000000001;
+		#10;
 
+	//Simulation time: 50ns
 	end
       
 endmodule
