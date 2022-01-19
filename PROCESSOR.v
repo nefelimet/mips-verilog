@@ -19,15 +19,20 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module PROCESSOR(
+	input clk,
+	 output wire [31:0] Instr,
+	 output wire [31:0] Immed,
+	 output wire [31:0] RF_A,
+	 output wire [31:0] RF_B,
+	 output wire [31:0] RF_B_or_sb,
+	 output wire [31:0] ALU_out,
+	 output wire [31:0] MEM_out,
+	 output wire [31:0] MEM_out_or_lb,
+	 output wire [31:0] lui_out
     );
 	 
 	 //Internal signals for datapath
-	 wire [31:0] Instr;
-	 wire [31:0] Immed;
-	 wire [31:0] RF_A;
-	 wire [31:0] RF_B;
-	 wire [31:0] ALU_out;
-	 wire [31:0] MEM_out;
+	
 	 
 	 //Internal control signals
 	 wire Reset;
@@ -39,17 +44,20 @@ module PROCESSOR(
 	 wire ALU_Bin_sel;
 	 wire [3:0] ALU_func;
 	 wire Mem_WrEn;
+	 wire Zero;
+	 wire lui;
+	 wire lb;
+	 wire sb;
+	 
 	 
 	 //Create control unit
-	 CONTROL control_unit (.Instr(Instr), .PC_sel(PC_sel), .PC_LdEn(PC_LdEn), .Reset(Reset), .RF_WrEn(RF_WrEn), .RF_WrData_sel(RF_WrData_sel), .RF_B_sel(RF_B_sel), .ALU_Bin_sel(ALU_Bin_sel), .ALU_func(ALU_func), .Mem_WrEn(Mem_WrEn));
+	 CONTROL control_unit (.Instr(Instr), .Zero(Zero), .clk(clk), .PC_sel(PC_sel), .PC_LdEn(PC_LdEn), .Reset(Reset), .RF_WrEn(RF_WrEn), .RF_WrData_sel(RF_WrData_sel), .RF_B_sel(RF_B_sel), .ALU_Bin_sel(ALU_Bin_sel), .ALU_func(ALU_func), .Mem_WrEn(Mem_WrEn), .lui(lui), .lb(lb), .sb(sb));
 	 
 	 //Create each stage and connect them
-	 IFSTAGE if_stage (.PC_Immed(Immed), .PC_sel(), .PC_LdEn(), .Reset(), .Clk(), .Instr(Instr));
-	 DECSTAGE dec_stage (.Instr(Instr), .RF_WrEn(), .ALU_out(ALU_out), .MEM_out(MEM_out), .RF_WrData_sel(), .RF_B_sel(), .Clk(), .Immed(Immed), .RF_A(RF_A), .RF_B(RF_B));
-	 ALUSTAGE alu_stage (.RF_A(RF_A), .RF_B(RF_B), .Immed(Immed), .ALU_Bin_sel(), .ALU_func(), .ALU_out(ALU_out));
-	 MEMSTAGE mem_stage (.clk(), .Mem_WrEn(), .ALU_MEM_Addr(ALU_out), .MEM_DataIn(RF_B), .MEM_DataOut(MEM_out));
+	 IFSTAGE if_stage (.PC_Immed(Immed), .PC_sel(PC_sel), .PC_LdEn(PC_LdEn), .Reset(Reset), .Clk(clk), .Instr(Instr));
+	 DECSTAGE dec_stage (.Instr(Instr), .RF_WrEn(RF_WrEn), .ALU_out(ALU_out), .RF_WrData_sel(RF_WrData_sel), .RF_B_sel(RF_B_sel), .Clk(clk), .sb(sb), .lb(lb), .Immed(Immed), .RF_A(RF_A), .lui_out(lui_out), .MEM_out(MEM_out), .RF_B_or_sb(RF_B_or_sb));
+	 ALUSTAGE alu_stage (.RF_A(RF_A), .RF_B(RF_B_or_sb), .Immed(Immed), .ALU_Bin_sel(ALU_Bin_sel), .lui_out(lui_out), .lui(lui), .ALU_func(ALU_func), .ALU_out(ALU_out), .Zero(Zero));
+	 MEMSTAGE mem_stage (.clk(clk), .Mem_WrEn(Mem_WrEn), .ALU_MEM_Addr(ALU_out), .MEM_DataIn(RF_B), .MEM_DataOut(MEM_out));
 	 
-	 
-
 
 endmodule
