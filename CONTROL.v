@@ -87,8 +87,8 @@ module CONTROL(
 		case(Instr[31:26])
 		
 			6'b111000: begin //li
-				 PC_sel = 0;
-				 RF_WrEn = 1;
+				PC_sel = 0;
+				RF_WrEn = 1;
 				RF_WrData_sel = 0;
 				RF_B_sel = 1;
 				ALU_Bin_sel = 1;
@@ -117,7 +117,7 @@ module CONTROL(
 				RF_WrEn = 1;
 				RF_WrData_sel = 0;
 				RF_B_sel = 1;
-				 ALU_Bin_sel = 1;
+				ALU_Bin_sel = 1;
 				ALU_func = 0;
 				Mem_WrEn = 0;
 				lui = 0;
@@ -132,7 +132,7 @@ module CONTROL(
 				RF_B_sel = 1;
 				ALU_Bin_sel = 1;
 				ALU_func = 4'b0010;
-				 Mem_WrEn = 0;
+				Mem_WrEn = 0;
 				lui = 0;
 				lb = 0;
 				sb = 0;
@@ -207,11 +207,11 @@ module CONTROL(
 				sb = 0;
 			end
 			
-			6'b000011: begin //sb
+			6'b000111: begin //sb
 				PC_sel = 0;
 				RF_WrEn = 1;
 				RF_WrData_sel = 1;
-				 RF_B_sel = 1;
+				RF_B_sel = 1;
 				ALU_Bin_sel = 1;
 				ALU_func = 0;
 				Mem_WrEn = 1;
@@ -237,7 +237,7 @@ module CONTROL(
 				PC_sel = 0;
 				RF_WrEn = 0;
 				RF_WrData_sel = 0;
-				 RF_B_sel = 1;
+				RF_B_sel = 1;
 				ALU_Bin_sel = 1;
 				ALU_func = 0;
 				Mem_WrEn = 1;
