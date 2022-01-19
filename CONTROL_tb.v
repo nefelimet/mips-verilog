@@ -158,8 +158,6 @@ module CONTROL_tb;
 		//sw $r1 $r3 3
 		Instr = 32'b01111100001000110000000000000011;
 		#4;
-		
-		
 
 	//Simulation time: 23*4 = 92ns
 	end
