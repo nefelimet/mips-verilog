@@ -46,7 +46,7 @@ module DECSTAGE(
 	wire [31:0] RF_B;
 	
 	//Create output Immed
-	wire [31:0] temp1 = {16'b0000000000000000, instr4};
+	wire [31:0] temp1 = {instr4[15],instr4[15],instr4[15],instr4[15],instr4[15],instr4[15],instr4[15],instr4[15],instr4[15],instr4[15],instr4[15],instr4[15],instr4[15],instr4[15],instr4[15],instr4[15], instr4};
 	assign Immed = temp1;
 	
 	//Create lui unit
