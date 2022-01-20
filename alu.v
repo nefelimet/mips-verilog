@@ -35,7 +35,7 @@ module alu(
 		4'b0000:
 			alu_out = A + B;
 		4'b0001:
-			alu_out = A - B;
+			alu_out = A + (~B+1);
 		4'b0010:
 			alu_out = A & B;
 		4'b0011:
