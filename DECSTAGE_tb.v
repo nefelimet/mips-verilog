@@ -72,6 +72,7 @@ module DECSTAGE_tb;
 		sb = 0;
 		lb = 0;
 		#10;
+		//$display("r1 Dout: %b", uut.RF.r1.Dout);
 		
 		//#li 5 $r2
 		Instr = 32'b11100000000000100000000000000101;
@@ -140,7 +141,11 @@ module DECSTAGE_tb;
 		lb = 0;
 		#10;
 		
-	//Simulation time: 70ns
+		//Test negative immed sign extension
+		Instr = 32'b00000000001000101111111111111010;
+		#10;
+		
+	//Simulation time: 80ns
 	end
       
 endmodule
