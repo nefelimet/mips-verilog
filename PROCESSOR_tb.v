@@ -34,7 +34,6 @@ module PROCESSOR_tb;
 	wire [31:0] RF_B_or_sb;
 	wire [31:0] ALU_out;
 	wire [31:0] MEM_out;
-	wire [31:0] MEM_out_or_lb;
 	wire [31:0] lui_out;
 	  
 	// Instantiate the Unit Under Test (UUT)
@@ -46,7 +45,6 @@ module PROCESSOR_tb;
 		.RF_B_or_sb(RF_B_or_sb),
 		.ALU_out(ALU_out),
 		.MEM_out(MEM_out),
-		.MEM_out_or_lb(MEM_out_or_lb),
 		.lui_out(lui_out)
 	);
 
@@ -1190,6 +1188,7 @@ module PROCESSOR_tb;
 		$display("-----------------------------");
 		
 		#2;
+		//sw
 		$display("--------------28--------------");
 		$display("Instr = %b", uut.Instr);
 		$display("PC_sel = %b, PC_LdEn = %b, RF_WrEn = %b, RF_WrData_sel = %b, RF_B_sel = %b", uut.PC_sel, uut.PC_LdEn, uut.RF_WrEn, uut.RF_WrData_sel, uut.RF_B_sel);
@@ -1229,9 +1228,12 @@ module PROCESSOR_tb;
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
 		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM addr: %b, MEM Din: %b, MEM WrEn: %b, MEM Dout: %b", uut.mem_stage.ram_mem.addr, uut.mem_stage.ram_mem.din, uut.mem_stage.ram_mem.we, uut.mem_stage.ram_mem.dout);
+		$display("RF_B: %b, sb_out: %b, RF_B_or_sb: %b", uut.dec_stage.RF.r5.Dout, uut.dec_stage.sb_out, uut.dec_stage.RF_B_or_sb);
 		$display("-----------------------------");
 		
 		#2;
+		//sb
 		$display("--------------29--------------");
 		$display("Instr = %b", uut.Instr);
 		$display("PC_sel = %b, PC_LdEn = %b, RF_WrEn = %b, RF_WrData_sel = %b, RF_B_sel = %b", uut.PC_sel, uut.PC_LdEn, uut.RF_WrEn, uut.RF_WrData_sel, uut.RF_B_sel);
@@ -1271,6 +1273,8 @@ module PROCESSOR_tb;
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
 		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM addr: %b, MEM Din: %b, MEM WrEn: %b, MEM Dout: %b", uut.mem_stage.ram_mem.addr, uut.mem_stage.ram_mem.din, uut.mem_stage.ram_mem.we, uut.mem_stage.ram_mem.dout);
+		$display("RF_B: %b, sb_out: %b, RF_B_or_sb: %b", uut.dec_stage.RF.r10.Dout, uut.dec_stage.sb_out, uut.dec_stage.RF_B_or_sb);
 		$display("-----------------------------");
 		
 		#2;
@@ -1313,6 +1317,7 @@ module PROCESSOR_tb;
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
 		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM addr: %b, MEM Din: %b, MEM WrEn: %b, MEM Dout: %b", uut.mem_stage.ram_mem.addr, uut.mem_stage.ram_mem.din, uut.mem_stage.ram_mem.we, uut.mem_stage.ram_mem.dout);
 		$display("-----------------------------");
 		
 		#2;
@@ -1355,6 +1360,7 @@ module PROCESSOR_tb;
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
 		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM addr: %b, MEM Din: %b, MEM WrEn: %b, MEM Dout: %b", uut.mem_stage.ram_mem.addr, uut.mem_stage.ram_mem.din, uut.mem_stage.ram_mem.we, uut.mem_stage.ram_mem.dout);
 		$display("-----------------------------");
 		
 		#2;
@@ -1397,6 +1403,7 @@ module PROCESSOR_tb;
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
 		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM addr: %b, MEM Din: %b, MEM WrEn: %b, MEM Dout: %b", uut.mem_stage.ram_mem.addr, uut.mem_stage.ram_mem.din, uut.mem_stage.ram_mem.we, uut.mem_stage.ram_mem.dout);
 		$display("-----------------------------");
 		
 		#2;
@@ -1439,6 +1446,7 @@ module PROCESSOR_tb;
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
 		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM addr: %b, MEM Din: %b, MEM WrEn: %b, MEM Dout: %b", uut.mem_stage.ram_mem.addr, uut.mem_stage.ram_mem.din, uut.mem_stage.ram_mem.we, uut.mem_stage.ram_mem.dout);
 		$display("-----------------------------");
 		
 		#2;
@@ -1481,6 +1489,7 @@ module PROCESSOR_tb;
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
 		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM addr: %b, MEM Din: %b, MEM WrEn: %b, MEM Dout: %b", uut.mem_stage.ram_mem.addr, uut.mem_stage.ram_mem.din, uut.mem_stage.ram_mem.we, uut.mem_stage.ram_mem.dout);
 		$display("-----------------------------");
 		
 	//Simulation time: 34*2=68ns
