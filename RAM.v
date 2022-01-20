@@ -28,10 +28,11 @@ module RAM(
 	
 	reg [31:0] ram_mem [1023:0];
 	always @(posedge clk) begin
+		
 		if(we)
 			ram_mem[addr] = din;
-		else
-			dout = ram_mem[addr];
+		dout = ram_mem[addr];
+		
 	end
 	
 endmodule
