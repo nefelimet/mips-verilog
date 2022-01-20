@@ -23,11 +23,11 @@ module ALUSTAGE(
     input [31:0] RF_B,
     input [31:0] Immed,
     input ALU_Bin_sel,
-    input [31:0] lui_out,
-    input lui,
+	 input [31:0] lui_out,
+	 input lui,
     input [3:0] ALU_func,
     output [31:0] ALU_out,
-    output Zero
+	 output Zero
     );
 	 
 	 wire [31:0] ALU_in_B;
