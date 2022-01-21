@@ -152,6 +152,7 @@ module CONTROL(
 			end
 			
 			6'b111111: begin //b
+			if (clk==0) begin
 				PC_sel = 1;
 				RF_WrEn = 0;
 				RF_WrData_sel = 0;
@@ -162,6 +163,8 @@ module CONTROL(
 				lui = 0;
 				lb = 0;
 				sb = 0;
+			end
+				
 			end
 			
 			6'b000000: begin //beq
@@ -196,15 +199,15 @@ module CONTROL(
 			
 			6'b000011: begin //lb
 				PC_sel = 0;
-				RF_WrEn = 1;
+				lb = 1;
 				RF_WrData_sel = 1;
 				RF_B_sel = 1;
 				ALU_Bin_sel = 1;
 				ALU_func = 0;
 				Mem_WrEn = 0;
 				lui = 0;
-				lb = 1;
 				sb = 0;
+				RF_WrEn = 1;
 			end
 			
 			6'b000111: begin //sb
