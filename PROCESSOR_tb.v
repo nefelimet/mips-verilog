@@ -92,7 +92,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("PC_out: %b", uut.if_stage.progcount.Dout);
 		$display("-----------------------------");
 		
@@ -135,7 +135,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("PC_out: %b", uut.if_stage.progcount.Dout);
 		$display("-----------------------------");
 		
@@ -178,7 +178,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("PC_out: %b", uut.if_stage.progcount.Dout);
 		$display("-----------------------------");
 		
@@ -221,7 +221,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("PC_out: %b", uut.if_stage.progcount.Dout);
 		$display("-----------------------------");
 		
@@ -264,7 +264,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("PC_out: %b", uut.if_stage.progcount.Dout);
 		$display("-----------------------------");
 		
@@ -307,7 +307,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("-----------------------------");
 		
 		#2;
@@ -349,7 +349,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("-----------------------------");
 		
 		#2;
@@ -391,7 +391,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("-----------------------------");
 		
 		#2;
@@ -433,7 +433,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("-----------------------------");
 		
 		#2;
@@ -475,7 +475,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("-----------------------------");
 		
 		#2;
@@ -517,7 +517,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("-----------------------------");
 		
 		#2;
@@ -559,7 +559,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("-----------------------------");
 		
 		#2;
@@ -601,7 +601,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("-----------------------------");
 		
 		#2;
@@ -643,7 +643,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("-----------------------------");
 		
 		#2;
@@ -685,7 +685,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("-----------------------------");
 		
 		#2;
@@ -727,7 +727,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("-----------------------------");
 		
 		#2;
@@ -769,7 +769,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("-----------------------------");
 		
 		#2;
@@ -811,7 +811,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("PC_out: %b", uut.if_stage.progcount.Dout);
 		$display("-----------------------------");
 		
@@ -854,7 +854,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("PC_out: %b", uut.if_stage.progcount.Dout);
 		$display("-----------------------------");
 		
@@ -897,7 +897,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("PC_out: %b", uut.if_stage.progcount.Dout);
 		$display("-----------------------------");
 		
@@ -940,7 +940,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("PC_out: %b", uut.if_stage.progcount.Dout);
 		$display("-----------------------------");
 		
@@ -983,7 +983,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("PC_out: %b", uut.if_stage.progcount.Dout);
 		$display("-----------------------------");
 		
@@ -1026,7 +1026,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("PC_out: %b", uut.if_stage.progcount.Dout);
 		$display("-----------------------------");
 		
@@ -1069,7 +1069,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("PC_out: %b", uut.if_stage.progcount.Dout);
 		$display("-----------------------------");
 		
@@ -1112,7 +1112,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("PC_out: %b", uut.if_stage.progcount.Dout);
 		$display("-----------------------------");
 		
@@ -1155,7 +1155,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("PC_out: %b", uut.if_stage.progcount.Dout);
 		$display("-----------------------------");
 		
@@ -1198,7 +1198,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("PC_out: %b", uut.if_stage.progcount.Dout);
 		$display("-----------------------------");
 		
@@ -1242,7 +1242,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("MEM addr: %b, MEM Din: %b, MEM WrEn: %b, MEM Dout: %b", uut.mem_stage.ram_mem.addr, uut.mem_stage.ram_mem.din, uut.mem_stage.ram_mem.we, uut.mem_stage.ram_mem.dout);
 		$display("RF_B: %b, sb_out: %b, RF_B_or_sb: %b", uut.dec_stage.RF.r5.Dout, uut.dec_stage.sb_out, uut.dec_stage.RF_B_or_sb);
 		$display("PC_out: %b", uut.if_stage.progcount.Dout);
@@ -1288,7 +1288,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("MEM addr: %b, MEM Din: %b, MEM WrEn: %b, MEM Dout: %b", uut.mem_stage.ram_mem.addr, uut.mem_stage.ram_mem.din, uut.mem_stage.ram_mem.we, uut.mem_stage.ram_mem.dout);
 		$display("RF_B: %b, sb_out: %b, RF_B_or_sb: %b", uut.dec_stage.RF.r10.Dout, uut.dec_stage.sb_out, uut.dec_stage.RF_B_or_sb);
 		$display("-----------------------------");
@@ -1332,7 +1332,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("MEM addr: %b, MEM Din: %b, MEM WrEn: %b, MEM Dout: %b", uut.mem_stage.ram_mem.addr, uut.mem_stage.ram_mem.din, uut.mem_stage.ram_mem.we, uut.mem_stage.ram_mem.dout);
 		$display("-----------------------------");
 		
@@ -1375,7 +1375,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("MEM addr: %b, MEM Din: %b, MEM WrEn: %b, MEM Dout: %b", uut.mem_stage.ram_mem.addr, uut.mem_stage.ram_mem.din, uut.mem_stage.ram_mem.we, uut.mem_stage.ram_mem.dout);
 		$display("-----------------------------");
 		
@@ -1418,7 +1418,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("MEM addr: %b, MEM Din: %b, MEM WrEn: %b, MEM Dout: %b", uut.mem_stage.ram_mem.addr, uut.mem_stage.ram_mem.din, uut.mem_stage.ram_mem.we, uut.mem_stage.ram_mem.dout);
 		$display("-----------------------------");
 		
@@ -1461,7 +1461,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("MEM addr: %b, MEM Din: %b, MEM WrEn: %b, MEM Dout: %b", uut.mem_stage.ram_mem.addr, uut.mem_stage.ram_mem.din, uut.mem_stage.ram_mem.we, uut.mem_stage.ram_mem.dout);
 		$display("-----------------------------");
 		
@@ -1504,7 +1504,7 @@ module PROCESSOR_tb;
 		$display("r30 Dout: %b", uut.dec_stage.RF.r30.Dout);
 		$display("r31 Dout: %b", uut.dec_stage.RF.r31.Dout);
 		$display("instr2: %b, read_reg2: %b, RF_B: %b", uut.dec_stage.instr2, uut.dec_stage.read_reg2, uut.dec_stage.RF.Dout2);
-		$display("MEM[2]: %b", uut.mem_stage.ram_mem.dout);
+		$display("MEM: %b", uut.mem_stage.ram_mem.dout);
 		$display("MEM addr: %b, MEM Din: %b, MEM WrEn: %b, MEM Dout: %b", uut.mem_stage.ram_mem.addr, uut.mem_stage.ram_mem.din, uut.mem_stage.ram_mem.we, uut.mem_stage.ram_mem.dout);
 		$display("-----------------------------");
 		
