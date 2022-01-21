@@ -38,7 +38,6 @@ module RAM(
 	always @(clk==0) begin
 		dout = ram_mem[addr];
 	end
-
 	
 endmodule
 
