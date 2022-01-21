@@ -49,8 +49,7 @@ module DECSTAGE(
 	wire [31:0] temp1 = {instr4[15],instr4[15],instr4[15],instr4[15],instr4[15],instr4[15],instr4[15],instr4[15],instr4[15],instr4[15],instr4[15],instr4[15],instr4[15],instr4[15],instr4[15],instr4[15], instr4};
 	assign Immed = temp1;
 	
-	//Create lui unit
-	//lui_unit lui (.immed(instr4), .lui_out(lui_out));
+	//Create lui_out
 	wire [31:0] temp2 = {instr4, 16'b0000000000000000};
 	assign lui_out = temp2;
 	
@@ -61,11 +60,10 @@ module DECSTAGE(
 	//Create register file
 	reg_file RF (.Ard1(instr1), .Ard2(read_reg2), .Awr(instr3), .Dout1(RF_A), .Dout2(RF_B), .Din(write_data), .WrEn(RF_WrEn), .Clk(Clk));
 
-	//Create get_byte units for lb and sb instructions
-	//get_byte lb_byte (.Din(MEM_out), .Dout(lb_out));
+	//Get byte for lb and sb instructions
 	wire [31:0] temp3 = {24'b000000000000000000000000, MEM_out[7:0]};
 	assign lb_out = temp3;
-	//get_byte sb_byte (.Din(RF_B), .Dout(sb_out));
+	
 	wire [31:0] temp4 = {24'b000000000000000000000000, RF_B[7:0]};
 	assign sb_out = temp4;
 	
