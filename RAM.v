@@ -31,9 +31,14 @@ module RAM(
 		
 		if(we)
 			ram_mem[addr] = din;
-		dout = ram_mem[addr];
+		//dout = ram_mem[addr];
 		
 	end
+	
+	always @(clk==0) begin
+		dout = ram_mem[addr];
+	end
+
 	
 endmodule
 
